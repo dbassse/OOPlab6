@@ -1,0 +1,81 @@
+[project]
+name = "lab6oop"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pre-commit>=4.5.0",
+    "pytest>=9.0.1",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.11.0",
+    "flake8>=7.3.0",
+    "isort>=7.0.0",
+    "mypy>=1.19.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.2,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+extend-exclude = '''
+tests/test_library\.py
+tests/test_birthdays\.py
+tests/run_all_tests\.py
+'''
+
+[tool.isort]
+profile = "black"
+known_first_party = ["library", "birthday", "tests"]
+
+skip = [
+    "tests/test_library.py",
+    "tests/test_birthdays.py",
+    "venv",
+    ".venv",
+    ".git",
+    "__pycache__",
+]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203, E266, E501, W503, E402, E712"
+
+extend-exclude = '''
+    .git,
+    __pycache__,
+    .venv,
+    venv,
+    tests/test_library.py,
+    tests/test_birthdays.py,
+    tests/run_all_tests.py,
+'''
+
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "--verbose --strict-markers --strict-config"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
