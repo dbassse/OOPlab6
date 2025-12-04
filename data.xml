@@ -1,2 +1,2 @@
 <?xml version='1.0' encoding='utf-8'?>
-<library><book><title>Морфий</title><author>Михаил Булгаков</author><year>1960</year><genre>Реализм</genre><pages>200</pages></book></library>
+<cars><car><brand>BMW</brand><model>Z4</model><license_plate>КА1238</license_plate><max_speed>250</max_speed><current_speed>120</current_speed></car></cars>

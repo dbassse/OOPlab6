@@ -15,8 +15,8 @@ library_path = os.path.join(parent_dir, "library")
 sys.path.insert(0, library_path)
 
 # Теперь импортируем модули
-from library.models import Book, DataFormatError, InvalidInputError, UnknownCommandError
-from library.storage import Library
+from car.models import Book, DataFormatError, InvalidInputError, UnknownCommandError
+from car.storage import Library
 
 
 class TestBook:
